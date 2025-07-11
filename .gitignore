@@ -1,0 +1,22 @@
+# virtual environment
+venv/
+env/
+
+# SQLite database
+*.sqlite3
+db.sqlite3
+
+# pycache va kompilyatsiyalangan fayllar
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE sozlamalari
+.idea/
+.vscode/
+
+# maxfiy fayllar (agar bo‘lsa)
+*.env
+
+.DB_Store
