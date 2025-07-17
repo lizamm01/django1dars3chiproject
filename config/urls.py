@@ -16,20 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from loyiha1 import views as bir
-from loyiha2 import views as ikk
-from loyiha3 import views as uch
-
+from loyiha1.views import index
+from loyiha1.views import viloyat
+from loyiha1.views import tuman
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('university/', bir.university_info),
-    path('item/', bir.shop_item),
-    path('menu/', bir.restaurant_menu),
-    path('news/', ikk.news_article),
-    path('planet/', ikk.planet_info),
-    path('company/', ikk.company_detail),
-    path('flight/', uch.flight_info),
-    path('hospital/', uch.hospital_detail),
-    path('app/', uch.app_detail),
+    path('index/', index),
+    path('viloyat/', viloyat),
+    path('tuman/', tuman),
 ]

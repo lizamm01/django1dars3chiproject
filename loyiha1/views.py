@@ -1,12 +1,32 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from .models import *
 
-def university_info(request):
-    return JsonResponse({"name": "TATU", "faculty": "IT", "students": 5000})
+def index(request):
+    s = "<h1> Mahallalar </h1> \n"
+    m = Mahalla.objects.all()
+    context = {
+        "m": m,
+        "title": "MAHALLA NOMI"
+    }
 
-def shop_item(request):
-    return JsonResponse({"item": "Kofta", "price": 150, "in_stock": True})
+    return render(request, 'index.html', context=context)
 
-def restaurant_menu(request):
-    return JsonResponse({"dish": "Osh", "price": 30000, "available": True})
+def viloyat(request):
+    s = "<h1> Viloyatlar </h1> \n"
+    v = Viloyat.objects.all()
+    context = {
+        "v": v,
+        "title": "VILOYATLAR TOGRISIDA"
+    }
 
+    return render(request, 'vil.html', context=context)
+
+def tuman(request):
+    s = "<h1> Tumanlar </h1> \n"
+    t = Tuman.objects.all()
+    context = {
+        "t": t,
+        "title": "TUMAN NOMLARI"
+    }
+
+    return render(request, 'tuman.html', context=context)
